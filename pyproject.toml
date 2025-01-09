@@ -1,0 +1,68 @@
+[tool.poetry]
+name = "pharmachat"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+loguru = "^0.7.1"
+pydantic = "^2.4.0"
+pydantic_settings = "^2.0.3"
+pydantic-extra-types = "^2.1.0"
+typer = "^0.9.0"
+rich = "^13.5.2"
+pandas = "^2.1.1"
+matplotlib = "^3.7.2"
+psycopg2 = "^2.9.9"
+openpyxl = "^3.1.2"
+venny4py = "^1.0.2"
+types-requests = "^2.32.0.20241016"
+requests = "^2.32.3"
+bs4 = "^0.0.2"
+pyyaml = "^6.0.2"
+pre-commit = "^4.0.1"
+
+[tool.black]
+include = '\.ipynb?$'
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "D",  # pydocstyle
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "E712",  # true-false comparison
+    "C901",  # too complex
+]
+
+[tool.ruff.per-file-ignores]
+"pharmachat/cli/**.py" = ["B008"]
+
+[tool.ruff.isort]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+plugins = [
+  "pydantic.mypy",
+  "numpy.typing.mypy_plugin",
+]
+strict_optional = false
+ignore_missing_imports = true
+
+[tool.poetry.scripts]
+"pharmachat" = "pharmachat.cli:app"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
