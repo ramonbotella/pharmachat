@@ -24,6 +24,9 @@ bs4 = "^0.0.2"
 pyyaml = "^6.0.2"
 pre-commit = "^4.0.1"
 
+[tool.poetry.group.lint.dependencies]
+types-requests = "^2.32.0.20241016"
+
 [tool.black]
 include = '\.ipynb?$'
 
