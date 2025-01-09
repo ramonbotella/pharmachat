@@ -1,0 +1,20 @@
+volumes:
+  ollama_data:
+
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    volumes:
+      - ollama_data:/root/.ollama
+      - ./entrypoint.sh:/entrypoint.sh
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+    environment:
+      - LLM_MODEL=${LLM_MODEL}
+    entrypoint: ["/usr/bin/bash", "/entrypoint.sh"]
+
+networks:
+  default:
+    driver: bridge
