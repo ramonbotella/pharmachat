@@ -11,9 +11,6 @@ fi
 # Run poetry install
 poetry install
 
-# Execute the Python script to set environment variables
-python3 pharmachat/core/set_env.py
-
 # Check if Docker is installed, if not, provide instructions
 if ! command -v docker &> /dev/null
 then
