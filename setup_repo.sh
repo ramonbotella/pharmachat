@@ -19,4 +19,4 @@ then
 fi
 
 # Run docker compose up in detached mode
-docker compose up -d
+sudo docker compose up -d
