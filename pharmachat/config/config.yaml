@@ -5,4 +5,6 @@ BASE_LEAFLET_URL: "https://cima.aemps.es/cima/dochtml/p/"
 
 API_ENDPOINT: "http://localhost:11434/api/generate"
 
-LLM_MODEL: "llama3.2"
+PHARMA_ASSISTANT_LLM: "pharma_assistant"
+
+LANGUAGE_DETECTOR_LLM: "language_detector"
