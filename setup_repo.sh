@@ -22,4 +22,4 @@ then
 fi
 
 # Run docker compose up in detached mode
-docker-compose up -d
+docker compose up -d
