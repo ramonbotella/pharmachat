@@ -37,7 +37,8 @@ class GlobalConfig(BaseSettings):
     # Define your configuration fields here
     BASE_SEARCH_URL: str
     BASE_LEAFLET_URL: str
-    LLM_MODEL: str
+    PHARMA_ASSISTANT_LLM: str
+    LANGUAGE_DETECTOR_LLM: str
     API_ENDPOINT: str
 
     class Config:
