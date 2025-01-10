@@ -8,6 +8,7 @@ services:
     volumes:
       - ollama_data:/root/.ollama
       - ./entrypoint.sh:/entrypoint.sh
+      - ./model_files:/model_files
     ports:
       - "11434:11434"
     restart: unless-stopped

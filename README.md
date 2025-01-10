@@ -41,6 +41,7 @@ pharmachat pharma_assistant <medicament_name> <question>
 
 Let us review PharmaChat's folder structure with a brief description of every item.
 
+    ├── model_files                     <- Folder to store the model files for the custimized LLM's.
     ├── pharmachat                      <- Main package folder.
     │   ├──data                         <- Data ETL package folder.
     │   │    └── leaflet_scrapping.py   <- Contains the function to scrape medicament leaflets from the CIMA API.
