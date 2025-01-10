@@ -17,17 +17,15 @@ PharmaChat is a Python-based application that allows users to query a local lang
     cd pharmachat
     ```
 
-2. **Install dependencies using Poetry:**
+2. **Install pharmachat and dependencies using setup_repo.sh script:**
 
     ```sh
-    poetry install
+    ./setup_repo.sh
     ```
 
-3. **Activate the virtual environment:**
+    This script will install the project dependencies using Poetry and set up the pre-commit hooks."
 
-    ```sh
-    poetry shell
-    ```
+
 
 ## Usage
 
@@ -36,7 +34,7 @@ PharmaChat is a Python-based application that allows users to query a local lang
 You can use the CLI to ask questions about specific medicaments.
 
 ```sh
-poetry run pharma_assistant <medicament_name> <question>
+pharmachat pharma_assistant <medicament_name> <question>
 ```
 
 ## Project Structure
@@ -44,11 +42,11 @@ poetry run pharma_assistant <medicament_name> <question>
 Let us review PharmaChat's folder structure with a brief description of every item.
 
     ├── pharmachat                      <- Main package folder.
-    │   ├──data                         <- Local data folder.
+    │   ├──data                         <- Data ETL package folder.
     │   │    └── leaflet_scrapping.py   <- Contains the function to scrape medicament leaflets from the CIMA API.
-    │   ├── ml                          <- Machine learning related code.
+    │   ├── ml                          <- Machine learning packege folder.
     │   │    └── ollama_interface.py    <- Defines the interface to interact with the Ollama local LLM.
-    │   ├── cli                         <- Command-line interface related code.
+    │   ├── cli                         <- Command-line interface pacakge folder.
     │   │    └── ask_ollama.py          <- CLI to ask Ollama a question about a specific medicament.
     │   ├── __init__.py                 <- Initializes the package and sets the version.
     ├── .gitignore                      <- Generic .gitignore file.
@@ -63,22 +61,9 @@ Let us review PharmaChat's folder structure with a brief description of every it
 This project uses pre-commit hooks to ensure code quality. To set up the pre-commit hooks, run:
 
 ```sh
-poetry run pre-commit install
+pre-commit install
 ```
 
-### Linting and Formatting
-
-- **Black**: For code formatting.
-- **Ruff**: For linting.
-- **Mypy**: For type checking.
-
-You can run these tools manually using:
-
-```sh
-poetry run black .
-poetry run ruff .
-poetry run mypy .
-```
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -11,8 +11,6 @@ services:
     ports:
       - "11434:11434"
     restart: unless-stopped
-    environment:
-      - LLM_MODEL=${LLM_MODEL}
     entrypoint: ["/usr/bin/bash", "/entrypoint.sh"]
 
 networks:
