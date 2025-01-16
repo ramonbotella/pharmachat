@@ -2,6 +2,9 @@ FROM python:3.12-slim
 
 WORKDIR /root
 
+# Install curl
+RUN apt-get update && apt-get install -y curl
+
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 - && \
     cd /usr/local/bin && \
