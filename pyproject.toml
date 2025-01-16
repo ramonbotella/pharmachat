@@ -24,6 +24,8 @@ pre-commit = "^4.0.1"
 black = "^24.10.0"
 ruff = "^0.9.1"
 mypy = "^1.14.1"
+fastapi = "^0.115.6"
+uvicorn = "^0.34.0"
 
 [tool.poetry.group.lint.dependencies]
 types-requests = "^2.32.0.20241016"

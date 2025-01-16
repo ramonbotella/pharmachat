@@ -17,5 +17,8 @@ COPY ./ /root/
 # Install dependencies with Poetry
 RUN poetry install
 
-# Set the default command to keep the container running
-CMD ["tail", "-f", "/dev/null"]
+# Expose the API port
+EXPOSE 8000
+
+# Run the API
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
